@@ -1,3 +1,7 @@
+body {
+    padding-top: 60px;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -15,7 +19,7 @@ header {
 
 main {
   width: 600px;
-  margin: 60px auto 0px auto;
+  margin: 0px auto;
   background-color: #ffffff;
   border: 1px solid #e1e8ed;
   border-radius: 6px;
@@ -82,4 +86,14 @@ body {
   border: 1px solid transparent;
   border-radius: 4px;
   cursor: pointer;
+}
+
+p.info {
+    width: 600px;
+    color: #002A3D;
+    background: #b3e4ff;
+    padding: 14px;
+    border-radius: 3px;
+    line-height: 1.6;
+    margin: 0px auto 15px;
 }
