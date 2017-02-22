@@ -15,7 +15,7 @@ var DEV_MYSQL_CREDENTIALS = {
   database: 'twitter'
 };
 var credentials = process.env.CLEARDB_DATABASE_URL || DEV_MYSQL_CREDENTIALS;
-var connection = mysql.createConnection(credentials);
+var connection = mysql.createPool(credentials);
 
 connection.connect(function(err) {
   if(err) {
