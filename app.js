@@ -7,12 +7,15 @@ var cookieParser = require('cookie-parser');
 var authUser = require('./middleware/auth-user');
 var moment = require('moment');
 var app = express();
-var connection = mysql.createConnection({
-  host: process.env.CLEARDB_DATABASE_URL || '127.0.0.1',
-  user: process.env.CLEARDB_DATABASE_USER || 'vagrant',
-  password: process.env.CLEARDB_DATABASE_PASSWORD || 'vagrant',
+
+var DEV_MYSQL_CREDENTIALS = {
+  host: '127.0.0.1',
+  user: 'vagrant',
+  password: 'vagrant',
   database: 'twitter'
-});
+};
+var credentials = process.env.CLEARDB_DATABASE_URL || DEV_MYSQL_CREDENTIALS;
+var connection = mysql.createConnection(credentials);
 
 connection.connect(function(err) {
   if(err) {
