@@ -8,9 +8,9 @@ var authUser = require('./middleware/auth-user');
 var moment = require('moment');
 var app = express();
 var connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'vagrant',
-  password: '',
+  host: process.env.CLEARDB_DATABASE_URL || '127.0.0.1',
+  user: process.env.CLEARDB_DATABASE_USER || 'vagrant',
+  password: process.env.CLEARDB_DATABASE_PASSWORD || 'vagrant',
   database: 'twitter'
 });
 
