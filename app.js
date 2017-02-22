@@ -11,7 +11,7 @@ var app = express();
 var DEV_MYSQL_CREDENTIALS = {
   host: '127.0.0.1',
   user: 'vagrant',
-  password: 'vagrant',
+  password: '',
   database: 'twitter'
 };
 var credentials = process.env.CLEARDB_DATABASE_URL || DEV_MYSQL_CREDENTIALS;
