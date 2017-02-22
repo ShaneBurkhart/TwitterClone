@@ -99,7 +99,7 @@ app.post('/tweets/:id([0-9]+)/update', authUser, function(req, res) {
   var id = req.params.id;
   var handle = req.body.handle;
   var body = req.body.body;
-  var isDelete = req.body.delete_button;
+  var isDelete = req.body.delete_button !== undefined;;
   var queryCallback = function(err) {
     if(err) {
       console.log(err);
