@@ -25,7 +25,7 @@ connection.connect(function(err) {
 
   console.log('Connected to the database.');
 
-  app.listen(8080, function() {
+  app.listen(process.env.PORT || 8080, function() {
     console.log('Web server listening on port 8080!');
   });
 });
