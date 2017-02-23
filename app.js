@@ -17,19 +17,6 @@ var DEV_MYSQL_CREDENTIALS = {
 var credentials = process.env.CLEARDB_DATABASE_URL || DEV_MYSQL_CREDENTIALS;
 var connection = mysql.createPool(credentials);
 
-connection.connect(function(err) {
-  if(err) {
-    console.log(err);
-    return;
-  }
-
-  console.log('Connected to the database.');
-
-  app.listen(process.env.PORT || 8080, function() {
-    console.log('Web server listening on port 8080!');
-  });
-});
-
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
@@ -115,4 +102,8 @@ app.post('/tweets/:id([0-9]+)/update', authUser, function(req, res) {
     // The update button was pressed.
     connection.query(updateQuery, [body, handle, id], queryCallback);
   }
+});
+
+app.listen(process.env.PORT || 8080, function() {
+  console.log('Web server listening on port 8080!');
 });
