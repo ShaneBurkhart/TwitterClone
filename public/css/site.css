@@ -97,3 +97,13 @@ p.info {
     line-height: 1.6;
     margin: 0px auto 15px;
 }
+
+@media only screen and (max-width : 650px) {
+    .info {
+        width: 95%;
+    }
+
+    main {
+        width: 95%;
+    }
+}
